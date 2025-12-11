@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 		features = "src/test/resources/Features",
 		glue = {"AlertDashboard"},
 		plugin = {"pretty", "html:target/HtmlReports/Alert.html"},
-		tags = ("@TC_01 or @TC_02 or @TC_03 or @TC_04 or @TC_05 or @TC_06 or @TC_07")
+		tags = ("@TC_01 or @TC_02 or @TC_03 or @TC_04 or @TC_05 or @TC_06 or @TC_07 or @TC_08")
 		)
 
 public class TestRunner_AlertDashboard {

@@ -1,9 +1,15 @@
 package DeviceOrder;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.codehaus.plexus.util.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -18,6 +24,7 @@ public class DeviceOrder {
 
 	WebDriver driver;
 	LoginWebElements login;
+	Date currentdate = new Date();
 	
 	@Before
 	public void openbrowser() throws InterruptedException {
@@ -75,7 +82,6 @@ public class DeviceOrder {
 				break;
 			}
 		}
-			
 		Thread.sleep(2000);
 	}
 	//-----------------------------------------------------
@@ -109,13 +115,17 @@ public class DeviceOrder {
 		Thread.sleep(2000);
 	}
 	@And("user clicked submit button")
-	public void Dbutton() throws InterruptedException {
+	public void Dbutton() throws InterruptedException, IOException {
 		login.order();
 		Thread.sleep(2000);
+		String screenshotname = currentdate.toString().replace(":", "_").replace(" ", "_") + ".png";
+		File Screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(Screenshot, new File("target/HtmlReports/Screenshots/DeviceOrder/" + screenshotname));
 	}
 	@Then("Device already exsist exception should be displayed")
 	public void exception() throws InterruptedException {
 		String errormsg = login.samename();
+		System.out.println(errormsg);
 		Assert.assertEquals("Device with name 'Camera 04' already exists.", errormsg);
 	}
 	//--------------------------------------------------------------------------------------------
@@ -128,12 +138,15 @@ public class DeviceOrder {
 		Thread.sleep(1000);
 	}
 	@Then("Submit button opacity should be {string}")
-	public void visible(String expect_opacity) throws InterruptedException {
+	public void visible(String expect_opacity) throws InterruptedException, IOException {
 		//String expect_opacity1 = driver.findElement(By.cssSelector("opacity")).toString();
 		System.out.println("Opacity value from test step: " +expect_opacity);
 		String actualopacity = login.button();
 		System.out.println("Opacity value from redirected page: " + actualopacity);
 		Thread.sleep(1000);
+		String screenshotname = currentdate.toString().replace(":", "_").replace(" ","_") + ".png";
+		File Screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(Screenshot, new File("target/HtmlReports/Screenshots/DeviceOrder/" + screenshotname));
 		Assert.assertEquals(expect_opacity, actualopacity);
 	}
 	//-----------------------------------------------------------------------------------
@@ -145,12 +158,14 @@ public class DeviceOrder {
 		login.devicename(Devicename);
 	}
 	@Then("User not selected Device Type and Submit button opacity should be {string}")
-	public void opacity(String expected_opacity) throws InterruptedException {
+	public void opacity(String expected_opacity) throws InterruptedException, IOException {
 		System.out.println("Opacity value from Test Step: " + expected_opacity);
 		String Actual_opacity = login.button();
 		Thread.sleep(1000);
 		System.out.println("Opacity value from tesing window: " + Actual_opacity);
+		String screenshotname = currentdate.toString().replace(":", "_").replace(" ","_") + ".png";
+		File Screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(Screenshot, new File("target/HtmlReports/Screenshots/DeviceOrder/" + screenshotname));
 		Assert.assertEquals(expected_opacity, Actual_opacity);		
 	}
-
-	}
+}

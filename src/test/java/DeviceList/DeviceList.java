@@ -1,5 +1,6 @@
 package DeviceList;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -72,7 +73,7 @@ public class DeviceList {
 		System.out.println("Device list option selected");
 	}
 	@And("redirected to Device List page")
-	public void Dlistpage() throws InterruptedException {
+	public void Dlistpage() throws InterruptedException, IOException {
 		String expectedurl = "https://appliedsni01/device-list";
 		for(String handle : driver.getWindowHandles())
 		{
@@ -84,6 +85,7 @@ public class DeviceList {
 			}
 		}
 		Thread.sleep(1000);
+		configure.TakeScreenshot();
 	}
 //***************************************************************
 		//@validscenario
@@ -121,13 +123,14 @@ public class DeviceList {
 			Thread.sleep(1000);
 		}
 		@And("user redirected to Device configuration page")
-		public void DvcCng() throws InterruptedException{
+		public void DvcCng() throws InterruptedException, IOException{
 			String ExpectedUrl = "https://appliedsni01/device/configuration";
 			for(String handle : driver.getWindowHandles()) {
 				driver.switchTo().window(handle);
 				String CurrentUrl = driver.getCurrentUrl();
 				if(CurrentUrl.contains(ExpectedUrl)) {
 					Thread.sleep(1000);
+					configure.TakeScreenshot();
 					break;
 				}
 			}
@@ -136,18 +139,21 @@ public class DeviceList {
 //		//@Deviceconfiguration	
 		
 		@And("user click settings option for Active Device")
-		public void settings() throws InterruptedException {
+		public void settings() throws InterruptedException, IOException {
 			boolean activedevice = configure.OrderedDevice();
 			boolean confopt = configure.ConfigurationSetting();
 			if(activedevice == confopt) {
 				configure.confbtn();
+				Thread.sleep(1000);
+				configure.TakeScreenshot();
 				System.out.println("User clicked Setting option");
 			}
 		}
 		@And("user click Add option")
-			public void Addoption() throws InterruptedException {
+			public void Addoption() throws InterruptedException, IOException {
 				configure.Addopt();
 				Thread.sleep(1000);
+				configure.TakeScreenshot();
 			}
 		@And("user entered {string} and {string}")
 		public void Dtime(String starttime, String endtime) throws InterruptedException {
@@ -155,19 +161,21 @@ public class DeviceList {
 			Thread.sleep(1500);
 		}
 		@Then("select configuration status Enable")
-		public void Dstatus() throws InterruptedException {
+		public void Dstatus() throws InterruptedException, IOException {
 			configure.Confstatus();
 			Thread.sleep(1000);
+			configure.TakeScreenshot();
 		}
 		@And("user clicked Add option")
 		public void save() {
 			configure.Saveadd();
 		}
 		@Then("verify configured time saved in Device Configuration")
-		public void DeviceCng() throws InterruptedException {
+		public void DeviceCng() throws InterruptedException, IOException {
 			if(configure.Confadded().equalsIgnoreCase("Enabled")) {
 				System.out.println("Device Configuration Added");
 				Thread.sleep(1500);
+				configure.TakeScreenshot();
 			}
 		}
 		@And("user navigated to main dashboard")
@@ -213,10 +221,11 @@ public class DeviceList {
 			Thread.sleep(1000);
 		}
 		@Then("It should throw exception Start time cannot be more than End time")
-		public void expt_time() throws InterruptedException {
+		public void expt_time() throws InterruptedException, IOException {
 			String startime_exp = configure.morestartime();
 			Assert.assertEquals("End Time must be greater than Start Time.", startime_exp);
 			Thread.sleep(1500);
+			configure.TakeScreenshot();
 			System.out.println(startime_exp);
 		}
 //		//***************************************************************
@@ -246,12 +255,13 @@ public class DeviceList {
 			Thread.sleep(1000);
 		}
 		@And("user selected Add option")
-		public void Dvcsave() throws InterruptedException {
+		public void Dvcsave() throws InterruptedException, IOException {
 			configure.Saveadd();
 			Thread.sleep(1000);
+			configure.TakeScreenshot();
 		}
-		@Then("It should throw exception End Time cannot be earlier than Start Time")
-		public void exception_time() {
+		@Then("It should throw exception Enter proper time format")
+		public void exception_time() throws InterruptedException, IOException {
 			String expectedtimeexp = "Invalid time format (HH:MM:SS).";
 			String starttimeexp = configure.startimeformatexp();
 			String endtimeexp = configure.endtimeformatexp();
@@ -281,9 +291,10 @@ public class DeviceList {
 			Thread.sleep(1000);
 		}
 		@Then("selected Add option")
-		public void saveadd() throws InterruptedException {
+		public void saveadd() throws InterruptedException, IOException {
 			configure.Saveadd();
 			Thread.sleep(1000);
+			configure.TakeScreenshot();
 		}
 		@And("It should throw exception Status is mandatory")
 		public void confstatus() throws InterruptedException {
@@ -316,8 +327,10 @@ public class DeviceList {
 			configure.Confstatus();
 		}
 		@And("user click Save button")
-		public void savebtn() {
+		public void savebtn() throws InterruptedException, IOException {
 			configure.Saveadd();
+			Thread.sleep(1000);
+			configure.TakeScreenshot();
 		}
 		@Then("It should throw mandatory exception start time and end time are required")
 		public void blanktimeexp() throws InterruptedException {
@@ -353,21 +366,23 @@ public class DeviceList {
 			Thread.sleep(2000);
 		}
 		@Then("select configuration status Disable")
-		public void statusopt() throws InterruptedException {
+		public void statusopt() throws InterruptedException, IOException {
 			configure.Disableconfstatus();
 				System.out.println("Disable Option selected");
 				Thread.sleep(1000);
+				configure.TakeScreenshot();
 			}
 		@And("user clicked Save button")
 		public void settingsbtn() {
 			configure.Saveadd();
 		}
 		@Then("configured time saved in Device Configuration page")
-		public void DvcConfpage() throws InterruptedException {
+		public void DvcConfpage() throws InterruptedException, IOException {
 			String Dvcconf = configure.Disableadd();
 			if(Dvcconf.equalsIgnoreCase("Disabled")) {
 				System.out.println(Dvcconf);
 				Thread.sleep(1000);
+				configure.TakeScreenshot();
 			}
 		}
 		@And("user redirected back to main dashboard")

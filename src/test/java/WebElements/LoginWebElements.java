@@ -1,7 +1,13 @@
 package WebElements;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 public class LoginWebElements {
 
 	WebDriver driver;
+	Date currentdate = new Date();
 
 	@FindBy(id = "InputUsername")
 	WebElement txt_username;
@@ -18,46 +25,46 @@ public class LoginWebElements {
 	@FindBy(id = "InputPassword")
 	WebElement txt_password;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/form/div[3]/div")
+	@FindBy(xpath = "//button[@type='submit']")
 	WebElement btn_Signin;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[1]/button")
+	@FindBy(xpath = "//button//img[@class='sidebar-toggle-icon']")
 	WebElement opt_menu;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/div/button/i")
+	@FindBy(xpath = "//button//i[contains(@class,'bi-box-arrow-right')]")
 	WebElement opt_logout;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/form/div[2]/div[2]")
+	@FindBy(xpath = "//div[text()='Invalid Username or Password.']")
 	WebElement InvalidCredentials;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/form/div[1]/div")
+	@FindBy(xpath = "//div[text()='Username is required']")
 	WebElement emptyusername;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/form/div[2]/div[2]")
+	@FindBy(xpath = "//div[text()='Password is required']")
 	WebElement emptypassword;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/form/div[1]/div")
+	@FindBy(xpath = "//div[text()='Username must be at least 3 characters']")
 	WebElement lessuser;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/form/div[2]/div[2]")
+	@FindBy(xpath = "//div[text()='Password must be at least 6 characters']")
 	WebElement lesspassword;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/form/div[1]/div")
+	@FindBy(xpath = "//div[text()='Username must be no more than 20 characters']")
 	WebElement moreuser;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/ul/li[2]/span")
+	@FindBy(xpath = "//span[text()='📦 Device Order']")
 	WebElement deviceorder;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[1]/input")
+	@FindBy(xpath = "//input[@class='device-order-input']")
 	WebElement devicename;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/select")
+	@FindBy(xpath = "//select[@class='device-order-input']")
 	WebElement dropdown;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/button")
+	@FindBy(xpath = "//button[text() ='📥 Submit']")
 	WebElement order;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[1]")
+	@FindBy(xpath = "//div[@class ='device-order-error']")
 	WebElement samename;
 	
 	@FindBy(css = ".device-order-button")
@@ -119,8 +126,15 @@ public class LoginWebElements {
 		return samename.getText();
 	}
 	
-	public String InvalidCredentials() {
-		return InvalidCredentials.getText();
+	public boolean InvalidCredentials() {
+		String errormsg = "Invalid Username or Password";
+		String pageerrormsg = driver.getPageSource().toString();
+		if(pageerrormsg.contains(errormsg)){
+			System.out.println("Invalid Username or Password.");
+			return true;
+		}
+		System.out.println("Test Case failed");
+		return false;
 	}
 	
 	public String emptyusername() {
@@ -142,4 +156,9 @@ public class LoginWebElements {
 		return button.getCssValue("opacity");
 	}
 	
+	public void TakeScreenshot() throws IOException {
+		String ScreenshotName = currentdate.toString().replace(":", "_").replace(" ", "_") + ".png";
+		File TakeScreenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(TakeScreenshot, new File("target/HtmlReports/Screenshots/Login/" + ScreenshotName));
+	}
 }

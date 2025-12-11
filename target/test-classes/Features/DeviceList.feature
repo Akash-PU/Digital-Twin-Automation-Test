@@ -58,7 +58,7 @@ Then user select Add option
 And user entered alphabet at "<starttime>" and "<endtime>"
 Then selected Enable status at configuration
 And user selected Add option
-Then It should throw exception End Time cannot be earlier than Start Time
+Then It should throw exception Enter proper time format
 
 Examples:
 |starttime|endtime|

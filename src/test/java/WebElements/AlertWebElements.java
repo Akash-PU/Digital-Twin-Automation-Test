@@ -1,8 +1,15 @@
 package WebElements;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,178 +19,216 @@ import org.openqa.selenium.support.ui.Select;
 public class AlertWebElements {
 
 	WebDriver driver;
-	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[1]/span")
+	Date currentdate = new Date();
+
+	@FindBy(xpath = "//span[text()='Alert Monitoring Dashboard']")
 	WebElement Alerttagline;
-	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/table/tbody")
-	WebElement alerthistory;
-	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[1]/button[2]")
+
+	@FindBy(xpath = "//table[@class='alertuser-table']//tbody")
+	WebElement alertlist;
+
+	@FindBy(xpath = "//button[contains(text(), 'All Alerts')]")
 	WebElement allalert;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[1]/input[1]")
+	@FindBy(xpath = "//input[@placeholder='Search by Alert ID']")
 	WebElement alertidsearch;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/table/tbody/tr")
+	@FindBy(xpath = "//table[@class = 'alertuser-table']/tbody/tr")
 	List<WebElement> alertrows;
-	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[1]/input[2]")
+
+	@FindBy(xpath = "//table[@class = 'alertuser-table']/tbody/tr[1]/td[1]")
+	WebElement searchedalert;
+
+	@FindBy(xpath = "//div[@class='alertuser-list']")
+	List<WebElement> alertlistpage;
+
+	@FindBy(xpath = "(//input[@type='date'])[1]")
 	WebElement fromdate;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[1]/input[3]")
+	@FindBy(xpath = "(//input[@type='date'])[2]")
 	WebElement todate;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[1]/select")
+	@FindBy(xpath = "//div[text()='No records found']")
+	WebElement Noalerts;
+
+	@FindBy(xpath = "//select[@class='form-select']")
 	WebElement severity;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/div[1]/div/button")
+	@FindBy(xpath = "//button[text()='Reset Filters']")
 	WebElement resetfilterbtn;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/table/tbody/tr[2]/td/table")
+	@FindBy(xpath = "//table[@class='device-table']//tbody")
 	WebElement DevicesInvovled;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[3]/div[1]/div[1]/div[1]/div[1]")
+	@FindBy(xpath = "//table[@class = 'alertuser-table']/tbody/tr[1]/td[5]")
+	WebElement specificalertstatus;
+	 
+	@FindBy(xpath = "//div[@class = 'alert-id']")
 	WebElement specificalertid;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[3]/div[1]/div[1]/div[1]/div[2]")
-	WebElement specificalertidseverity;
+	@FindBy(xpath = "//div[@class='device-card-header']")
+	WebElement specificalertidinformation;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[3]/div[1]/div[1]/div[1]/div[3]")
-	WebElement specificalertidalertmessage;
+	@FindBy(xpath = "//button[@class='accordion-toggle']")
+	WebElement viewdetailsactions;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[3]/div[1]/div[1]/div[2]/div[1]")
-	WebElement specificalertidtimestamp;
+	@FindBy(xpath = "//div[contains(@class, 'alert-video-container')]//video")
+	WebElement playablevideossection;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[3]/div[1]/div[1]/div[2]/div[2]")
-	WebElement specificalertidstatus;
-
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[3]/div[1]/div[3]/button")
-	WebElement specificalertdetails;
-
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[3]/div[1]/div[4]/div")
-	WebElement alertinformationdetails;
-
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[3]/div[1]/div[4]/table/tbody/tr/td[1]")
+	@FindBy(xpath = "//table[@class='device-tables']//tbody/tr/td[1]")
 	WebElement specificalertdevicedetails;
 
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/div/table/tbody/tr[1]/td[5]")
-	WebElement specificalertstatus;
-
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[3]/div[1]/div[1]")
-	WebElement specificalertidinformation;
+	@FindBy(xpath = "//div[@class='inference-breakdown']")
+	WebElement alertinformationdetails;
 
 	public AlertWebElements(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	public String  alerttitle() {
+
+	public String alerttitle() {
 		return Alerttagline.getText();
 	}
+
 	public void allalerts() {
 		allalert.click();
 	}
+
 	public boolean alerthistory() throws InterruptedException {
 		Thread.sleep(1500);
-		return alertrows.stream().count()>= 1;
+		return alertrows.stream().count() >= 1;
 	}
+
 	public void searchalertid(String alertid) throws InterruptedException {
 		alertidsearch.clear();
 		alertidsearch.sendKeys(alertid);
 		Thread.sleep(1000);
 	}
+
 	public boolean searchalert(String alertid) {
-		for(WebElement row:alertrows) {
-			String alert = row.findElement(By.xpath("td[1]")).getText();
-			if(alert.equals(alertid)) {
+		String searchelement = driver.getPageSource();
+		if (searchelement.contains("No records found")) {
+			System.out.println("No Alert found - Please enter valid Alert ID");
+			return false;
+		} else {
+			String alert = searchedalert.getText();
+			if (alert.contains(alertid)) {
+				System.out.println("Alert found with ID: " + alert);
 				return true;
 			}
 		}
 		return false;
 	}
-		public void selectdaterange(String FromDate, String ToDate) throws InterruptedException {
-			resetfilterbtn.click();
-			fromdate.sendKeys(FromDate);
-			todate.sendKeys(ToDate);
-			Thread.sleep(1000);
-		}
-		public boolean displayalerts() {
-			for(WebElement row:alertrows) {
-				String date = row.findElement(By.xpath("td[2]")).getText();
-				//For now value hardcoded
-				if(date.contains("2025-11-20") || date.contains("2025-11-21")) {
-					System.out.println("Alert found: " + date);
-					return true;
-				}
-			}
-			System.out.println("Alert not found");
-			return false;
-		}
-		public void selectseverity(String severitylevel) throws InterruptedException {
-			severity.click();
-			Select severitydropdown = new Select(severity);
-			for(WebElement option:severitydropdown.getOptions()) {
-				if(option.getText().contains(severitylevel)) {
-					System.out.println("Selected severity: " + option.getText());
-					option.click();
-					break;
-				}
+
+	public void selectdaterange(String FromDate, String ToDate) throws InterruptedException {
+		resetfilterbtn.click();
+		fromdate.sendKeys(FromDate);
+		todate.sendKeys(ToDate);
+		Thread.sleep(1000);
+	}
+
+	public boolean displayalerts() {
+		String daterangealerts = driver.getPageSource();
+		if (daterangealerts.contains("No records found")) {
+			System.out.println("No Alerts found for the selected date range");
+		} else {
+			List<WebElement> alertcount = alertlist.findElements(By.xpath("tr"));
+			int Numberofalerts = alertcount.size();
+			if (Numberofalerts > 0) {
+				System.out.println("Number of Alerts found for the selected date range: " + Numberofalerts);
+				return true;
 			}
 		}
-		public boolean verifyselectedseverity(String severitylevel) throws InterruptedException {
-			for(WebElement row:alertrows) {
+		return false;
+	}
+
+	public void selectseverity(String severitylevel) throws InterruptedException {
+		severity.click();
+		Select severitydropdown = new Select(severity);
+		for (WebElement option : severitydropdown.getOptions()) {
+			if (option.getText().contains(severitylevel)) {
+				option.click();
+				System.out.println("Selected severity: " + option.getText());
+				break;
+			}
+		}
+	}
+
+	public boolean verifyselectedseverity(String severitylevel) throws InterruptedException {
+		String selectedseverity = driver.getPageSource();
+		if (selectedseverity.contains("No records found")) {
+			System.out.println("No Alerts found with selected severity: " + severitylevel);
+			return true;
+		} else {
+			for (WebElement row : alertrows) {
 				String severity = row.findElement(By.xpath("td[3]")).getText();
 				Thread.sleep(1000);
-				if(severity.equalsIgnoreCase(severitylevel)) {
+				if (severity.equalsIgnoreCase(severitylevel)) {
 					System.out.println("Alert found with severity: " + severity);
 					return true;
 				}
 			}
-			System.out.println("Alert not found with severity: " + severitylevel);
-			return false;
 		}
-		public boolean viewdevices() throws InterruptedException {
-			for(WebElement row:alertrows) {
-				row.findElement(By.xpath("td[6]/button")).click();
-				Thread.sleep(1000);
-				return true;
-			}
-			return false;
-		}
-		public boolean displaydevices() throws InterruptedException {
-			List<WebElement> devicelist = DevicesInvovled.findElements(By.xpath(".//tr/td[1]"));
-			if(devicelist.isEmpty()){
-				System.out.println("No devices found");
-				return false;
-			}
-			for(WebElement devicename : devicelist) {
-				System.out.println("Device name: " + devicename.getText());
-			}
+		return false;
+	}
+
+	public boolean viewdevices() throws InterruptedException {
+		for (WebElement row : alertrows) {
+			row.findElement(By.xpath("td[6]/button")).click();
+			Thread.sleep(1000);
 			return true;
 		}
-		public void clickalertid() throws InterruptedException {
-			for(WebElement row:alertrows){
-				if(specificalertstatus.getText().equals("complete")){
-					row.findElement(By.xpath("td[1]")).click();
-					Thread.sleep(1000);
-				}
-				else{
-					System.out.println("Alert is in Pending Status");
-				}
+		return false;
+	}
+
+	public boolean displaydevices() throws InterruptedException {
+		List<WebElement> devicelist = DevicesInvovled.findElements(By.xpath(".//tr/td[1]"));
+		if (devicelist.isEmpty()) {
+			System.out.println("No devices found");
+			return false;
+		}
+		for (WebElement devicename : devicelist) {
+			System.out.println("Device name: " + devicename.getText());
+		}
+		return true;
+	}
+
+	public void clickalertid() throws InterruptedException {
+			if (specificalertstatus.getText().equals("complete")) {
+				searchedalert.click();
+				Thread.sleep(1000);
+			} 
+			else {
+				System.out.println("Alert is pending status");
+				throw new AssertionError("Alert is in Pending Status");
 			}
 		}
-		public String navigatetoalertspecificdetails() {
-			return specificalertid.getText();
-		}
-		public String specificalertiddetails() {
-			return specificalertidinformation.getText();
-		}
-		public void clickviewdetailsactions() throws InterruptedException {
-			specificalertdetails.click();
+
+	public String navigatetoalertspecificdetails() {
+		return specificalertid.getText();
+	}
+
+	public String specificalertiddetails() {
+		return specificalertidinformation.getText();
+	}
+
+	public void clickviewdetailsactions() throws InterruptedException {
+		String src = playablevideossection.getAttribute("src");
+		if (src != null && (src.contains("media") || src.contains("alert_"))) {
+			viewdetailsactions.click();
 			Thread.sleep(1000);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView(true);", alertinformationdetails);
 			String Alertdevicedetails = specificalertdevicedetails.getText();
 			String Alertinformationdetials = alertinformationdetails.getText();
-			System.out.println(Alertdevicedetails +"\n" + Alertinformationdetials);
+			System.out.println(Alertdevicedetails + "\n" + Alertinformationdetials);
 			Thread.sleep(1000);
 		}
+	}
+
+	public void Takescreenshot() throws IOException {
+		String screenshotname = currentdate.toString().replace(":", "_").replace(" ", "_") + ".png";
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshot, new File("target/HtmlReports/Screenshots/Alertfeature/" + screenshotname));
+	}
 }

@@ -1,8 +1,14 @@
 package WebElements;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,6 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 public class ConfigurationWebElements {
 
 	WebDriver driver;
+	Date currentdate = new Date();
 	
 	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/ul/li[3]/span")
 	WebElement Dlistopt;
@@ -169,5 +176,11 @@ public class ConfigurationWebElements {
 	}
 	public String Disableadd() {
 		return disableadded.getText();
+	}
+
+	public void TakeScreenshot() throws IOException {
+		String ScreenshotName = currentdate.toString().replace(":", "_").replace(" ", "_") + ".png";
+		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshot, new File("target/HtmlReports/Screenshots/DeviceList&Configuration/" + ScreenshotName));
 	}
 }

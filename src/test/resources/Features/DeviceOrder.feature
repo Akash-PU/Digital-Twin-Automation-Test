@@ -12,7 +12,7 @@ And user redirected to Device order tab
 @ValidcaseDeviceOrder
 Scenario Outline: Provide new device details and order a device
 
-Then user enter "Camera 06"
+Then user enter "Camera 10"
 And click Device Type drop down and select the device type
 Then click Submit button
 
