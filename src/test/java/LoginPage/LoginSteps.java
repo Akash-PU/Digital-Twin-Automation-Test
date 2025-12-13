@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import WebElements.LoginWebElements;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,6 +21,12 @@ public class LoginSteps {
 
 	WebDriver driver;
 	LoginWebElements login;
+	private Scenario scenario;
+
+	@Before
+    public void beforeScenario(Scenario scenario) {
+        this.scenario = scenario;
+    }
 	
 	@Before
 	public void openbrowser() throws InterruptedException {
@@ -62,7 +69,7 @@ public class LoginSteps {
 		System.out.println("Clicked Signin option");
 		login.signin();
 		Thread.sleep(1700);
-		login.TakeScreenshot();
+		login.TakeScreenshot(driver, scenario, "Login");
 	}
 
 	@Then("user is navigated to main Dashboard")

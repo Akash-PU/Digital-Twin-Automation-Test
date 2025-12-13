@@ -1,11 +1,7 @@
 package WebElements;
-
-import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -15,6 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+
+import io.cucumber.java.Scenario;
 
 public class AlertWebElements {
 
@@ -226,9 +224,8 @@ public class AlertWebElements {
 		}
 	}
 
-	public void Takescreenshot() throws IOException {
-		String screenshotname = currentdate.toString().replace(":", "_").replace(" ", "_") + ".png";
-		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshot, new File("target/HtmlReports/Screenshots/Alertfeature/" + screenshotname));
+	public void Takescreenshot(WebDriver driver, Scenario scenario, String stepName) throws IOException {
+		byte[] screenshot =((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+         scenario.attach(screenshot, "image/png", stepName);
 	}
 }

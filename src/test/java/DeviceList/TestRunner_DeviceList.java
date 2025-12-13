@@ -9,7 +9,10 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 features = "src/test/resources/Features", 
 glue = {"DeviceList"},
-plugin = {"pretty", "html:target/HtmlReports/DeviceList.html"},
+plugin = {
+    				"pretty",
+    				"json:target/JsonReports/devicelist.json",
+    				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/extent"},
 tags =("@validscenario or @Configurationoption or @Deviceconfiguration or @Invalidtimeconfiguration or @Invalidtimeformat or @Mandatorydeviceconfiguration or @Blanktimeconfiguration or @Disableconfiguration"))
 
 public class TestRunner_DeviceList {

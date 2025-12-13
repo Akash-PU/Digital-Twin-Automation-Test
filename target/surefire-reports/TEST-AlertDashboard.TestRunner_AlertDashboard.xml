@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="AlertDashboard.TestRunner_AlertDashboard" time="114.568" tests="8" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="E:\AutomationWork\eclipse-workspace\CucumberJava01\target\test-classes;E:\AutomationWork\eclipse-workspace\CucumberJava01\target\classes;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-java\7.18.0\cucumber-java-7.18.0.jar;C:\Users\ASUS\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-junit\7.18.0\cucumber-junit-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-core\7.18.0\cucumber-core-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-gherkin\7.18.0\cucumber-gherkin-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.18.0\cucumber-gherkin-messages-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\gherkin\28.0.0\gherkin-28.0.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\messages\24.1.0\messages-24.1.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\testng-xml-formatter\0.1.0\testng-xml-formatter-0.1.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\query\12.2.0\query-12.2.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\tag-expressions\6.1.0\tag-expressions-6.1.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-expressions\17.1.0\cucumber-expressions-17.1.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\datatable\7.18.0\datatable-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-plugin\7.18.0\cucumber-plugin-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\docstring\7.18.0\docstring-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\html-formatter\21.3.1\html-formatter-21.3.1.jar;C:\Users\ASUS\.m2\repository\io\cucumber\junit-xml-formatter\0.4.0\junit-xml-formatter-0.4.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\ASUS\.m2\repository\com\google\protobuf\protobuf-java\3.25.3\protobuf-java-3.25.3.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\ASUS\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\ASUS\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\ASUS\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\ASUS\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\ASUS\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\ASUS\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\ASUS\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\ASUS\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\ASUS\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\ASUS\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\ASUS\.m2\repository\net\masterthought\cucumber-reporting\5.7.4\cucumber-reporting-5.7.4.jar;C:\Users\ASUS\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.13.2.2\jackson-databind-2.13.2.2.jar;C:\Users\ASUS\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.13.2\jackson-annotations-2.13.2.jar;C:\Users\ASUS\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.13.2\jackson-core-2.13.2.jar;C:\Users\ASUS\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.13.2\jackson-datatype-jsr310-2.13.2.jar;C:\Users\ASUS\.m2\repository\org\apache\velocity\velocity-engine-core\2.3\velocity-engine-core-2.3.jar;C:\Users\ASUS\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\ASUS\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\ASUS\.m2\repository\joda-time\joda-time\2.10.14\joda-time-2.10.14.jar;C:\Users\ASUS\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\ASUS\.m2\repository\org\codehaus\plexus\plexus-utils\3.4.2\plexus-utils-3.4.2.jar;C:\Users\ASUS\.m2\repository\org\jsoup\jsoup\1.15.3\jsoup-1.15.3.jar;C:\Users\ASUS\.m2\repository\com\googlecode\owasp-java-html-sanitizer\owasp-java-html-sanitizer\20211018.2\owasp-java-html-sanitizer-20211018.2.jar;C:\Users\ASUS\.m2\repository\commons-configuration\commons-configuration\1.10\commons-configuration-1.10.jar;C:\Users\ASUS\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\ASUS\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\Users\ASUS\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\ASUS\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\ASUS\.m2\repository\commons-io\commons-io\2.21.0\commons-io-2.21.0.jar;C:\Users\ASUS\.m2\repository\tech\grasshopper\extentreports-cucumber7-adapter\1.8.4\extentreports-cucumber7-adapter-1.8.4.jar;C:\Users\ASUS\.m2\repository\com\aventstack\extentreports\5.0.9\extentreports-5.0.9.jar;C:\Users\ASUS\.m2\repository\io\reactivex\rxjava3\rxjava\3.0.4\rxjava-3.0.4.jar;C:\Users\ASUS\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\ASUS\.m2\repository\org\freemarker\freemarker\2.3.30\freemarker-2.3.30.jar;C:\Users\ASUS\.m2\repository\org\projectlombok\lombok\1.18.12\lombok-1.18.12.jar;C:\Users\ASUS\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\ASUS\.m2\repository\tech\grasshopper\extent-pdf-report\2.9.0\extent-pdf-report-2.9.0.jar;C:\Users\ASUS\.m2\repository\tech\grasshopper\cucumber-pdf-report\2.11.0\cucumber-pdf-report-2.11.0.jar;C:\Users\ASUS\.m2\repository\org\apache\pdfbox\pdfbox\2.0.26\pdfbox-2.0.26.jar;C:\Users\ASUS\.m2\repository\org\apache\pdfbox\fontbox\2.0.26\fontbox-2.0.26.jar;C:\Users\ASUS\.m2\repository\org\knowm\xchart\xchart\3.8.0\xchart-3.8.0.jar;C:\Users\ASUS\.m2\repository\de\erichseifert\vectorgraphics2d\VectorGraphics2D\0.13\VectorGraphics2D-0.13.jar;C:\Users\ASUS\.m2\repository\de\rototor\pdfbox\graphics2d\0.30\graphics2d-0.30.jar;C:\Users\ASUS\.m2\repository\com\madgag\animated-gif-lib\1.4\animated-gif-lib-1.4.jar;C:\Users\ASUS\.m2\repository\org\yaml\snakeyaml\1.28\snakeyaml-1.28.jar;C:\Users\ASUS\.m2\repository\tech\grasshopper\table-layout\1.5.1\table-layout-1.5.1.jar;C:\Users\ASUS\.m2\repository\tech\grasshopper\rest-assured-cucumber-pdf-report\1.4.1\rest-assured-cucumber-pdf-report-1.4.1.jar;C:\Users\ASUS\.m2\repository\com\aventstack\klov-reporter\5.0.9\klov-reporter-5.0.9.jar;C:\Users\ASUS\.m2\repository\org\mongodb\mongodb-driver\3.6.4\mongodb-driver-3.6.4.jar;C:\Users\ASUS\.m2\repository\org\mongodb\mongodb-driver-core\3.6.4\mongodb-driver-core-3.6.4.jar;C:\Users\ASUS\.m2\repository\org\mongodb\bson\3.6.4\bson-3.6.4.jar;C:\Users\ASUS\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\ASUS\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\ASUS\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\ASUS\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\ASUS\.m2\repository\tech\grasshopper\htmlextentreporter\1.0.1\htmlextentreporter-1.0.1.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\jdk-25.0.1\bin"/>
+    <property name="sun.java.command" value="C:\Users\ASUS\AppData\Local\Temp\surefire964309014108491537\surefirebooter-20251213182055187_3.jar C:\Users\ASUS\AppData\Local\Temp\surefire964309014108491537 2025-12-13T18-20-54_988-jvmRun1 surefire-20251213182055187_1tmp surefire_0-20251213182055187_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="E:\AutomationWork\eclipse-workspace\CucumberJava01\target\test-classes;E:\AutomationWork\eclipse-workspace\CucumberJava01\target\classes;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-java\7.18.0\cucumber-java-7.18.0.jar;C:\Users\ASUS\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-junit\7.18.0\cucumber-junit-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-core\7.18.0\cucumber-core-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-gherkin\7.18.0\cucumber-gherkin-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.18.0\cucumber-gherkin-messages-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\gherkin\28.0.0\gherkin-28.0.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\messages\24.1.0\messages-24.1.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\testng-xml-formatter\0.1.0\testng-xml-formatter-0.1.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\query\12.2.0\query-12.2.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\tag-expressions\6.1.0\tag-expressions-6.1.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-expressions\17.1.0\cucumber-expressions-17.1.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\datatable\7.18.0\datatable-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\cucumber-plugin\7.18.0\cucumber-plugin-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\docstring\7.18.0\docstring-7.18.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\html-formatter\21.3.1\html-formatter-21.3.1.jar;C:\Users\ASUS\.m2\repository\io\cucumber\junit-xml-formatter\0.4.0\junit-xml-formatter-0.4.0.jar;C:\Users\ASUS\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\ASUS\.m2\repository\com\google\protobuf\protobuf-java\3.25.3\protobuf-java-3.25.3.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.59\selenium-java-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.59\selenium-api-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.59\selenium-chrome-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.59\selenium-edge-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.59\selenium-firefox-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.59\selenium-ie-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.59\selenium-opera-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.59\selenium-remote-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.59\selenium-safari-driver-3.141.59.jar;C:\Users\ASUS\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.59\selenium-support-3.141.59.jar;C:\Users\ASUS\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\ASUS\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\ASUS\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\ASUS\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\ASUS\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\ASUS\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\ASUS\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\ASUS\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\ASUS\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\ASUS\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\ASUS\.m2\repository\net\masterthought\cucumber-reporting\5.7.4\cucumber-reporting-5.7.4.jar;C:\Users\ASUS\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.13.2.2\jackson-databind-2.13.2.2.jar;C:\Users\ASUS\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.13.2\jackson-annotations-2.13.2.jar;C:\Users\ASUS\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.13.2\jackson-core-2.13.2.jar;C:\Users\ASUS\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.13.2\jackson-datatype-jsr310-2.13.2.jar;C:\Users\ASUS\.m2\repository\org\apache\velocity\velocity-engine-core\2.3\velocity-engine-core-2.3.jar;C:\Users\ASUS\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\ASUS\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\ASUS\.m2\repository\joda-time\joda-time\2.10.14\joda-time-2.10.14.jar;C:\Users\ASUS\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\ASUS\.m2\repository\org\codehaus\plexus\plexus-utils\3.4.2\plexus-utils-3.4.2.jar;C:\Users\ASUS\.m2\repository\org\jsoup\jsoup\1.15.3\jsoup-1.15.3.jar;C:\Users\ASUS\.m2\repository\com\googlecode\owasp-java-html-sanitizer\owasp-java-html-sanitizer\20211018.2\owasp-java-html-sanitizer-20211018.2.jar;C:\Users\ASUS\.m2\repository\commons-configuration\commons-configuration\1.10\commons-configuration-1.10.jar;C:\Users\ASUS\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\ASUS\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\Users\ASUS\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\ASUS\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\ASUS\.m2\repository\commons-io\commons-io\2.21.0\commons-io-2.21.0.jar;C:\Users\ASUS\.m2\repository\tech\grasshopper\extentreports-cucumber7-adapter\1.8.4\extentreports-cucumber7-adapter-1.8.4.jar;C:\Users\ASUS\.m2\repository\com\aventstack\extentreports\5.0.9\extentreports-5.0.9.jar;C:\Users\ASUS\.m2\repository\io\reactivex\rxjava3\rxjava\3.0.4\rxjava-3.0.4.jar;C:\Users\ASUS\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\ASUS\.m2\repository\org\freemarker\freemarker\2.3.30\freemarker-2.3.30.jar;C:\Users\ASUS\.m2\repository\org\projectlombok\lombok\1.18.12\lombok-1.18.12.jar;C:\Users\ASUS\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\ASUS\.m2\repository\tech\grasshopper\extent-pdf-report\2.9.0\extent-pdf-report-2.9.0.jar;C:\Users\ASUS\.m2\repository\tech\grasshopper\cucumber-pdf-report\2.11.0\cucumber-pdf-report-2.11.0.jar;C:\Users\ASUS\.m2\repository\org\apache\pdfbox\pdfbox\2.0.26\pdfbox-2.0.26.jar;C:\Users\ASUS\.m2\repository\org\apache\pdfbox\fontbox\2.0.26\fontbox-2.0.26.jar;C:\Users\ASUS\.m2\repository\org\knowm\xchart\xchart\3.8.0\xchart-3.8.0.jar;C:\Users\ASUS\.m2\repository\de\erichseifert\vectorgraphics2d\VectorGraphics2D\0.13\VectorGraphics2D-0.13.jar;C:\Users\ASUS\.m2\repository\de\rototor\pdfbox\graphics2d\0.30\graphics2d-0.30.jar;C:\Users\ASUS\.m2\repository\com\madgag\animated-gif-lib\1.4\animated-gif-lib-1.4.jar;C:\Users\ASUS\.m2\repository\org\yaml\snakeyaml\1.28\snakeyaml-1.28.jar;C:\Users\ASUS\.m2\repository\tech\grasshopper\table-layout\1.5.1\table-layout-1.5.1.jar;C:\Users\ASUS\.m2\repository\tech\grasshopper\rest-assured-cucumber-pdf-report\1.4.1\rest-assured-cucumber-pdf-report-1.4.1.jar;C:\Users\ASUS\.m2\repository\com\aventstack\klov-reporter\5.0.9\klov-reporter-5.0.9.jar;C:\Users\ASUS\.m2\repository\org\mongodb\mongodb-driver\3.6.4\mongodb-driver-3.6.4.jar;C:\Users\ASUS\.m2\repository\org\mongodb\mongodb-driver-core\3.6.4\mongodb-driver-core-3.6.4.jar;C:\Users\ASUS\.m2\repository\org\mongodb\bson\3.6.4\bson-3.6.4.jar;C:\Users\ASUS\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\ASUS\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\ASUS\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\ASUS\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\ASUS\.m2\repository\tech\grasshopper\htmlextentreporter\1.0.1\htmlextentreporter-1.0.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\ASUS"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="C:\Program Files\jdk-25.0.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="E:\AutomationWork\eclipse-workspace\CucumberJava01"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\ASUS\AppData\Local\Temp\surefire964309014108491537\surefirebooter-20251213182055187_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25.0.1+8-27"/>
+    <property name="user.name" value="ASUS"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\ASUS\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\ASUS\AppData\Local\Temp\"/>
+    <property name="java.version" value="25.0.1"/>
+    <property name="user.dir" value="E:\AutomationWork\eclipse-workspace\CucumberJava01"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\jdk-25.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Redis\;C:\Program Files\ffmpeg-2025-07-21-git-8cdb47e47a-essentials_build\bin;C:\src\flutter\bin;C:\Program Files\OpenSSL-Win64\bin;C:\Program Files\nodejs\;C:\Program Files\Tailscale\;C:\Program Files\jdk-25.0.1\bin;C:\Program Files\apache-maven-3.9.11\bin;C:\Program Files\Git\cmd;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\ASUS\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\ASUS\AppData\Local\Programs\Python\Python311\;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;C:\Users\ASUS\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\ASUS\AppData\Roaming\npm;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="25.0.1+8-27"/>
+    <property name="stdin.encoding" value="Cp1252"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="Verify alert dashboard page" classname="Alert Dashboard and Video Analysis Verification" time="17.286">
+    <system-out><![CDATA[
+@TC_01
+Scenario Outline: Verify alert dashboard page                            &amp#27;[90m# src/test/resources/Features/Alerts.feature:12&amp#27;[0m
+User is at Login Page
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on login page&amp#27;[0m                                            &amp#27;[90m# AlertDashboard.AlertDashboard.loginpage()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mentered &amp#27;[0m&amp#27;[32m&amp#27;[1m"Akash_QA1"&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1m"root@1234"&amp#27;[0m                                &amp#27;[90m# AlertDashboard.AlertDashboard.credentials(java.lang.String,java.lang.String)&amp#27;[0m
+Logged In
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mclicked signin button&amp#27;[0m                                             &amp#27;[90m# AlertDashboard.AlertDashboard.loggedin()&amp#27;[0m
+
+    Embedding All Alerts tabs [image/png 160126 bytes]
+
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicked All Alerts tabs&amp#27;[0m                                            &amp#27;[90m# AlertDashboard.AlertDashboard.allalertspage()&amp#27;[0m
+Dashboard title: Alert Monitoring Dashboard
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser logged in it should display Alert Monitoring Dashboard title&amp#27;[0m &amp#27;[90m# AlertDashboard.AlertDashboard.alertdashboard()&amp#27;[0m
+User found list of alerts
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mAll Alerts tabs should display Alert history&amp#27;[0m                       &amp#27;[90m# AlertDashboard.AlertDashboard.allalerts()&amp#27;[0m
+Test case Executed
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 141.0.7390.122 (b477534e7e10d193e916cd4e2967c589383625b2-refs/branch-heads/7390@{#2667}) on port 27959
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 27959.
+[1765630262.507][WARNING]: This version of ChromeDriver has not been tested with Chrome version 142.
+Dec 13, 2025 6:21:03 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="Verify the search functionality in the alert dashboard #1" classname="Alert Dashboard and Video Analysis Verification" time="13.349">
+    <system-out><![CDATA[
+@TC_02
+Scenario Outline: Verify the search functionality in the alert dashboard                                &amp#27;[90m# src/test/resources/Features/Alerts.feature:23&amp#27;[0m
+User is at Login Page
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on login page&amp#27;[0m                                                                           &amp#27;[90m# AlertDashboard.AlertDashboard.loginpage()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mentered &amp#27;[0m&amp#27;[32m&amp#27;[1m"Akash_QA1"&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1m"root@1234"&amp#27;[0m                                                               &amp#27;[90m# AlertDashboard.AlertDashboard.credentials(java.lang.String,java.lang.String)&amp#27;[0m
+Logged In
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mclicked signin button&amp#27;[0m                                                                            &amp#27;[90m# AlertDashboard.AlertDashboard.loggedin()&amp#27;[0m
+
+    Embedding All Alerts tabs [image/png 160126 bytes]
+
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicked All Alerts tabs&amp#27;[0m                                                                           &amp#27;[90m# AlertDashboard.AlertDashboard.allalertspage()&amp#27;[0m
+
+    Embedding Search Alert ID [image/png 53873 bytes]
+
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters a valid &amp#27;[0m&amp#27;[32m&amp#27;[1m"657a79b9-11d9-491b-9f2b-636581b7e717"&amp#27;[0m&amp#27;[32m in the search bar&amp#27;[0m                     &amp#27;[90m# AlertDashboard.AlertDashboard.enteralertid(java.lang.String)&amp#27;[0m
+Alert found with ID: 657a79b9-11d9-491b-9f2b-636581b7e717
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe system should display the corresponding alert details &amp#27;[0m&amp#27;[32m&amp#27;[1m"657a79b9-11d9-491b-9f2b-636581b7e717"&amp#27;[0m &amp#27;[90m# AlertDashboard.AlertDashboard.validatealert(java.lang.String)&amp#27;[0m
+Test case Executed
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 141.0.7390.122 (b477534e7e10d193e916cd4e2967c589383625b2-refs/branch-heads/7390@{#2667}) on port 34003
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 34003.
+[1765630275.851][WARNING]: This version of ChromeDriver has not been tested with Chrome version 142.
+Dec 13, 2025 6:21:15 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="Verify the search functionality in the alert dashboard #2" classname="Alert Dashboard and Video Analysis Verification" time="13.783">
+    <system-out><![CDATA[
+@TC_03
+Scenario Outline: Verify the search functionality in the alert dashboard                                     &amp#27;[90m# src/test/resources/Features/Alerts.feature:32&amp#27;[0m
+User is at Login Page
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on login page&amp#27;[0m                                                                                &amp#27;[90m# AlertDashboard.AlertDashboard.loginpage()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mentered &amp#27;[0m&amp#27;[32m&amp#27;[1m"Akash_QA1"&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1m"root@1234"&amp#27;[0m                                                                    &amp#27;[90m# AlertDashboard.AlertDashboard.credentials(java.lang.String,java.lang.String)&amp#27;[0m
+Logged In
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mclicked signin button&amp#27;[0m                                                                                 &amp#27;[90m# AlertDashboard.AlertDashboard.loggedin()&amp#27;[0m
+
+    Embedding All Alerts tabs [image/png 160126 bytes]
+
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicked All Alerts tabs&amp#27;[0m                                                                                &amp#27;[90m# AlertDashboard.AlertDashboard.allalertspage()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters a Invalid &amp#27;[0m&amp#27;[32m&amp#27;[1m"657a79b9-11d9-491b-9f2b-636581b7e717"&amp#27;[0m&amp#27;[32m in the search bar&amp#27;[0m                        &amp#27;[90m# AlertDashboard.AlertDashboard.enterinvalidalertid(java.lang.String)&amp#27;[0m
+Alert found with ID: 657a79b9-11d9-491b-9f2b-636581b7e717
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe system should display message No Alerts Found for provided &amp#27;[0m&amp#27;[32m&amp#27;[1m"657a79b9-11d9-491b-9f2b-636581b7e717"&amp#27;[0m &amp#27;[90m# AlertDashboard.AlertDashboard.noalerts(java.lang.String)&amp#27;[0m
+Test case Executed
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 141.0.7390.122 (b477534e7e10d193e916cd4e2967c589383625b2-refs/branch-heads/7390@{#2667}) on port 56319
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 56319.
+[1765630289.259][WARNING]: This version of ChromeDriver has not been tested with Chrome version 142.
+Dec 13, 2025 6:21:29 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="Verify the alert list by selecting valid date range" classname="Alert Dashboard and Video Analysis Verification" time="12.531">
+    <system-out><![CDATA[
+@TC_04
+Scenario Outline: Verify the alert list by selecting valid date range      &amp#27;[90m# src/test/resources/Features/Alerts.feature:41&amp#27;[0m
+User is at Login Page
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on login page&amp#27;[0m                                              &amp#27;[90m# AlertDashboard.AlertDashboard.loginpage()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mentered &amp#27;[0m&amp#27;[32m&amp#27;[1m"Akash_QA1"&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1m"root@1234"&amp#27;[0m                                  &amp#27;[90m# AlertDashboard.AlertDashboard.credentials(java.lang.String,java.lang.String)&amp#27;[0m
+Logged In
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mclicked signin button&amp#27;[0m                                               &amp#27;[90m# AlertDashboard.AlertDashboard.loggedin()&amp#27;[0m
+
+    Embedding All Alerts tabs [image/png 160126 bytes]
+
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicked All Alerts tabs&amp#27;[0m                                              &amp#27;[90m# AlertDashboard.AlertDashboard.allalertspage()&amp#27;[0m
+
+    Embedding Date Range [image/png 124000 bytes]
+
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser selects a valid date range from &amp#27;[0m&amp#27;[32m&amp#27;[1m"03-12-2025"&amp#27;[0m&amp#27;[32m to &amp#27;[0m&amp#27;[32m&amp#27;[1m"03-12-2025"&amp#27;[0m   &amp#27;[90m# AlertDashboard.AlertDashboard.selectdaterange(java.lang.String,java.lang.String)&amp#27;[0m
+Number of Alerts found for the selected date range: 6
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe system should display the alerts within the selected date range&amp#27;[0m &amp#27;[90m# AlertDashboard.AlertDashboard.displayalerts()&amp#27;[0m
+Test case Executed
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 141.0.7390.122 (b477534e7e10d193e916cd4e2967c589383625b2-refs/branch-heads/7390@{#2667}) on port 31029
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 31029.
+[1765630303.392][WARNING]: This version of ChromeDriver has not been tested with Chrome version 142.
+Dec 13, 2025 6:21:43 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="Verify the alert list by selecting invalid date range" classname="Alert Dashboard and Video Analysis Verification" time="11.788">
+    <system-out><![CDATA[
+@TC_05
+Scenario Outline: Verify the alert list by selecting invalid date range     &amp#27;[90m# src/test/resources/Features/Alerts.feature:50&amp#27;[0m
+User is at Login Page
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on login page&amp#27;[0m                                               &amp#27;[90m# AlertDashboard.AlertDashboard.loginpage()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mentered &amp#27;[0m&amp#27;[32m&amp#27;[1m"Akash_QA1"&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1m"root@1234"&amp#27;[0m                                   &amp#27;[90m# AlertDashboard.AlertDashboard.credentials(java.lang.String,java.lang.String)&amp#27;[0m
+Logged In
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mclicked signin button&amp#27;[0m                                                &amp#27;[90m# AlertDashboard.AlertDashboard.loggedin()&amp#27;[0m
+
+    Embedding All Alerts tabs [image/png 160126 bytes]
+
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicked All Alerts tabs&amp#27;[0m                                               &amp#27;[90m# AlertDashboard.AlertDashboard.allalertspage()&amp#27;[0m
+
+    Embedding Date Range [image/png 35831 bytes]
+
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser selects an invalid date range from &amp#27;[0m&amp#27;[32m&amp#27;[1m"18-11-2025"&amp#27;[0m&amp#27;[32m to &amp#27;[0m&amp#27;[32m&amp#27;[1m"19-11-2025"&amp#27;[0m &amp#27;[90m# AlertDashboard.AlertDashboard.selectinvaliddaterange(java.lang.String,java.lang.String)&amp#27;[0m
+No Alerts found for the selected date range
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe system should display no alerts for the selected date range&amp#27;[0m      &amp#27;[90m# AlertDashboard.AlertDashboard.displayerrormessage()&amp#27;[0m
+Test case Executed
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 141.0.7390.122 (b477534e7e10d193e916cd4e2967c589383625b2-refs/branch-heads/7390@{#2667}) on port 39504
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 39504.
+[1765630314.654][WARNING]: This version of ChromeDriver has not been tested with Chrome version 142.
+Dec 13, 2025 6:21:54 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="Verify the alert list by selecting severity" classname="Alert Dashboard and Video Analysis Verification" time="11.607">
+    <system-out><![CDATA[
+@TC_06
+Scenario Outline: Verify the alert list by selecting severity                        &amp#27;[90m# src/test/resources/Features/Alerts.feature:59&amp#27;[0m
+User is at Login Page
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on login page&amp#27;[0m                                                        &amp#27;[90m# AlertDashboard.AlertDashboard.loginpage()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mentered &amp#27;[0m&amp#27;[32m&amp#27;[1m"Akash_QA1"&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1m"root@1234"&amp#27;[0m                                            &amp#27;[90m# AlertDashboard.AlertDashboard.credentials(java.lang.String,java.lang.String)&amp#27;[0m
+Logged In
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mclicked signin button&amp#27;[0m                                                         &amp#27;[90m# AlertDashboard.AlertDashboard.loggedin()&amp#27;[0m
+
+    Embedding All Alerts tabs [image/png 160126 bytes]
+
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicked All Alerts tabs&amp#27;[0m                                                        &amp#27;[90m# AlertDashboard.AlertDashboard.allalertspage()&amp#27;[0m
+Selected severity: Medium
+
+    Embedding Severity [image/png 163631 bytes]
+
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser selects a severity of alert &amp#27;[0m&amp#27;[32m&amp#27;[1m"Medium"&amp#27;[0m                                     &amp#27;[90m# AlertDashboard.AlertDashboard.selectseverity(java.lang.String)&amp#27;[0m
+Alert found with severity: medium
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe system should display the alerts for the selected severity level &amp#27;[0m&amp#27;[32m&amp#27;[1m"Medium"&amp#27;[0m &amp#27;[90m# AlertDashboard.AlertDashboard.displayalerts(java.lang.String)&amp#27;[0m
+Test case Executed
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 141.0.7390.122 (b477534e7e10d193e916cd4e2967c589383625b2-refs/branch-heads/7390@{#2667}) on port 56072
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 56072.
+[1765630326.876][WARNING]: This version of ChromeDriver has not been tested with Chrome version 142.
+Dec 13, 2025 6:22:06 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="Devices that capture video reference for raised alerts" classname="Alert Dashboard and Video Analysis Verification" time="12.339">
+    <system-out><![CDATA[
+@TC_07
+Scenario Outline: Devices that capture video reference for raised alerts                  &amp#27;[90m# src/test/resources/Features/Alerts.feature:68&amp#27;[0m
+User is at Login Page
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on login page&amp#27;[0m                                                             &amp#27;[90m# AlertDashboard.AlertDashboard.loginpage()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mentered &amp#27;[0m&amp#27;[32m&amp#27;[1m"Akash_QA1"&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1m"root@1234"&amp#27;[0m                                                 &amp#27;[90m# AlertDashboard.AlertDashboard.credentials(java.lang.String,java.lang.String)&amp#27;[0m
+Logged In
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mclicked signin button&amp#27;[0m                                                              &amp#27;[90m# AlertDashboard.AlertDashboard.loggedin()&amp#27;[0m
+
+    Embedding All Alerts tabs [image/png 160126 bytes]
+
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicked All Alerts tabs&amp#27;[0m                                                             &amp#27;[90m# AlertDashboard.AlertDashboard.allalertspage()&amp#27;[0m
+Alert found with ID: 657a79b9-11d9-491b-9f2b-636581b7e717
+
+    Embedding View Devices [image/png 59728 bytes]
+
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters &amp#27;[0m&amp#27;[32m&amp#27;[1m"657a79b9-11d9-491b-9f2b-636581b7e717"&amp#27;[0m&amp#27;[32m and clicked View Devices option&amp#27;[0m &amp#27;[90m# AlertDashboard.AlertDashboard.viewdevices(java.lang.String)&amp#27;[0m
+Device name: ASNI DEMO CAM 01
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe system should display the devices that are invovled in raised alert&amp#27;[0m            &amp#27;[90m# AlertDashboard.AlertDashboard.displaydevices()&amp#27;[0m
+Test case Executed
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 141.0.7390.122 (b477534e7e10d193e916cd4e2967c589383625b2-refs/branch-heads/7390@{#2667}) on port 56671
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 56671.
+[1765630338.121][WARNING]: This version of ChromeDriver has not been tested with Chrome version 142.
+Dec 13, 2025 6:22:18 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1765630349.477][SEVERE]: Unable to receive message from renderer
+]]></system-err>
+  </testcase>
+  <testcase name="Verify the specific alert details" classname="Alert Dashboard and Video Analysis Verification" time="20.044">
+    <system-out><![CDATA[
+@TC_08
+Scenario Outline: Verify the specific alert details                                                                       &amp#27;[90m# src/test/resources/Features/Alerts.feature:79&amp#27;[0m
+User is at Login Page
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on login page&amp#27;[0m                                                                                             &amp#27;[90m# AlertDashboard.AlertDashboard.loginpage()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mentered &amp#27;[0m&amp#27;[32m&amp#27;[1m"Akash_QA1"&amp#27;[0m&amp#27;[32m and &amp#27;[0m&amp#27;[32m&amp#27;[1m"root@1234"&amp#27;[0m                                                                                 &amp#27;[90m# AlertDashboard.AlertDashboard.credentials(java.lang.String,java.lang.String)&amp#27;[0m
+Logged In
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mclicked signin button&amp#27;[0m                                                                                              &amp#27;[90m# AlertDashboard.AlertDashboard.loggedin()&amp#27;[0m
+
+    Embedding All Alerts tabs [image/png 160126 bytes]
+
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicked All Alerts tabs&amp#27;[0m                                                                                             &amp#27;[90m# AlertDashboard.AlertDashboard.allalertspage()&amp#27;[0m
+Alert found with ID: 657a79b9-11d9-491b-9f2b-636581b7e717
+
+    Embedding Alert Specific Details [image/png 55579 bytes]
+
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser clicked specific &amp#27;[0m&amp#27;[32m&amp#27;[1m"657a79b9-11d9-491b-9f2b-636581b7e717"&amp#27;[0m                                                       &amp#27;[90m# AlertDashboard.AlertDashboard.clickedalertid(java.lang.String)&amp#27;[0m
+
+    Embedding Alert Specific Details [image/png 55579 bytes]
+
+
+    Embedding Alert Specific Details [image/png 163509 bytes]
+
+User navigated to alert specific details page 657a79b9-11d9-491b-9f2b-636581b7e717
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser navigate to the specific alert &amp#27;[0m&amp#27;[32m&amp#27;[1m"657a79b9-11d9-491b-9f2b-636581b7e717"&amp#27;[0m&amp#27;[32m details page&amp#27;[0m                            &amp#27;[90m# AlertDashboard.AlertDashboard.alertspecificdetails(java.lang.String)&amp#27;[0m
+Alert Information: 657a79b9-11d9-491b-9f2b-636581b7e717
+Medium
+Person detected with no safety equipment.
+2025-12-03 15:32:05
+Complete
+
+    Embedding Alert Specific Details [image/png 163509 bytes]
+
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mDetails section should display the following information AlertID, Severity, Alertmessage, Status, Timestamp&amp#27;[0m         &amp#27;[90m# AlertDashboard.AlertDashboard.displayalertinformation()&amp#27;[0m
+ASNI_DEMO_CAM_01
+Inference Breakdown
+Start:
+15:32:05
+End:
+15:32:15
+LLM Response:
+On 2025-12-03 at 15:32:05, ASNI DEMO CAM 01 detected a person without the required safety equipment in the location with coordinates [Longitude: -0.00003944, Latitude: 0.00000954]. The violation lasted for 12.093259 seconds.
+
+    Embedding Alert Specific Details [image/png 125185 bytes]
+
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mView Details & Actions button should be clickable and it should display Device Name, Inference Analysis and Status&amp#27;[0m &amp#27;[90m# AlertDashboard.AlertDashboard.clickviewdetailsactions()&amp#27;[0m
+Test case Executed
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 141.0.7390.122 (b477534e7e10d193e916cd4e2967c589383625b2-refs/branch-heads/7390@{#2667}) on port 36709
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 36709.
+[1765630350.483][WARNING]: This version of ChromeDriver has not been tested with Chrome version 142.
+Dec 13, 2025 6:22:30 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+</testsuite>

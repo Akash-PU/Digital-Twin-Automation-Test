@@ -1,0 +1,44 @@
+-------------------------------------------------------------------------------
+Test set: DeviceList.TestRunner_DeviceList
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 92.42 s <<< FAILURE! -- in DeviceList.TestRunner_DeviceList
+Testing Device list page.Testing list of Devices -- Time elapsed: 20.98 s <<< FAILURE!
+java.lang.AssertionError: No Active Device found, skipping test
+	at DeviceList.DeviceList.Active(DeviceList.java:111)
+	at ✽.user able to see Active Devices(file:///E:/AutomationWork/eclipse-workspace/CucumberJava01/src/test/resources/Features/DeviceList.feature:15)
+
+Testing Device list page.Testing Device configuration option -- Time elapsed: 10.19 s <<< FAILURE!
+java.lang.AssertionError: No Active Device found, skipping test
+	at DeviceList.DeviceList.Cngopt(DeviceList.java:123)
+	at ✽.user able to see configuration option only for Active "ASNI DEMO CAM 03"(file:///E:/AutomationWork/eclipse-workspace/CucumberJava01/src/test/resources/Features/DeviceList.feature:20)
+
+Testing Device list page.Testing Device configuration for object Detection #1 -- Time elapsed: 10.09 s <<< FAILURE!
+java.lang.AssertionError: No Active Device found, skipping test
+	at DeviceList.DeviceList.Cngopt(DeviceList.java:123)
+	at ✽.user able to see configuration option only for Active "ASNI DEMO CAM 03"(file:///E:/AutomationWork/eclipse-workspace/CucumberJava01/src/test/resources/Features/DeviceList.feature:31)
+
+Testing Device list page.Testing invalid time Device configuration #1 -- Time elapsed: 10.22 s <<< FAILURE!
+java.lang.AssertionError: No Active Device found, skipping test
+	at DeviceList.DeviceList.Cngopt(DeviceList.java:123)
+	at ✽.user able to see configuration option only for Active "ASNI DEMO CAM 03"(file:///E:/AutomationWork/eclipse-workspace/CucumberJava01/src/test/resources/Features/DeviceList.feature:48)
+
+Testing Device list page.Testing invalid time Device configuration #2 -- Time elapsed: 10.37 s <<< FAILURE!
+java.lang.AssertionError: No Active Device found, skipping test
+	at DeviceList.DeviceList.Cngopt(DeviceList.java:123)
+	at ✽.user able to see configuration option only for Active "ASNI DEMO CAM 03"(file:///E:/AutomationWork/eclipse-workspace/CucumberJava01/src/test/resources/Features/DeviceList.feature:64)
+
+Testing Device list page.Testing mandatory status Device configuration -- Time elapsed: 10.14 s <<< FAILURE!
+java.lang.AssertionError: No Active Device found, skipping test
+	at DeviceList.DeviceList.Cngopt(DeviceList.java:123)
+	at ✽.user able to see configuration option only for Active "ASNI DEMO CAM 03"(file:///E:/AutomationWork/eclipse-workspace/CucumberJava01/src/test/resources/Features/DeviceList.feature:80)
+
+Testing Device list page.Testing mandatoy time configuration -- Time elapsed: 10.11 s <<< FAILURE!
+java.lang.AssertionError: No Active Device found, skipping test
+	at DeviceList.DeviceList.Cngopt(DeviceList.java:123)
+	at ✽.user able to see configuration option only for Active "ASNI DEMO CAM 03"(file:///E:/AutomationWork/eclipse-workspace/CucumberJava01/src/test/resources/Features/DeviceList.feature:95)
+
+Testing Device list page.Testing Device configuration for object Detection #2 -- Time elapsed: 10.24 s <<< FAILURE!
+java.lang.AssertionError: No Active Device found, skipping test
+	at DeviceList.DeviceList.Cngopt(DeviceList.java:123)
+	at ✽.user able to see configuration option only for Active "ASNI DEMO CAM 03"(file:///E:/AutomationWork/eclipse-workspace/CucumberJava01/src/test/resources/Features/DeviceList.feature:111)
+

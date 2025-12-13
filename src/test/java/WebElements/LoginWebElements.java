@@ -1,11 +1,8 @@
 package WebElements;
-
-import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+
+import io.cucumber.java.Scenario;
 
 public class LoginWebElements {
 
@@ -69,7 +68,7 @@ public class LoginWebElements {
 	
 	@FindBy(css = ".device-order-button")
 	WebElement button;
-	
+
 	public LoginWebElements(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -156,9 +155,8 @@ public class LoginWebElements {
 		return button.getCssValue("opacity");
 	}
 	
-	public void TakeScreenshot() throws IOException {
-		String ScreenshotName = currentdate.toString().replace(":", "_").replace(" ", "_") + ".png";
-		File TakeScreenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(TakeScreenshot, new File("target/HtmlReports/Screenshots/Login/" + ScreenshotName));
+	public void TakeScreenshot(WebDriver driver, Scenario scenario, String stepName) throws IOException {
+         byte[] screenshot =((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+         scenario.attach(screenshot, "image/png", stepName);
 	}
 }

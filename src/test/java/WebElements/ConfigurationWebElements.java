@@ -1,11 +1,8 @@
 package WebElements;
-
-import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -15,27 +12,29 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import io.cucumber.java.Scenario;
+
 public class ConfigurationWebElements {
 
 	WebDriver driver;
 	Date currentdate = new Date();
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[1]/ul/li[3]/span")
+	@FindBy(xpath = "//span[text()='🖥️ Device List']")
 	WebElement Dlistopt;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/span")
+	@FindBy(xpath = "//span[text()='Device List']")
 	WebElement Dlist;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[3]/table/tbody/tr[1]/td[3]/span")
-	WebElement DvcActive;
-	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[3]/table/tbody")
+	@FindBy(xpath = "/html//table[contains(@class,'devicelist-table')]/tbody")
 	WebElement Devices;
 	
-	@FindBy(xpath = "//*[@id=\"settingheader\"]")
+	@FindBy(xpath = "//button[@id='settingheader']")
 	WebElement ConfgOpt;
-	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[1]/button")
+
+	@FindBy(xpath = "//div//h3[@class='title']")
+	WebElement ConfgDvcname;
+
+	@FindBy(xpath = "//button[@class='add-btn']")
 	WebElement Addopt;
 	
 	@FindBy(xpath = "//*[@id=\"start_time\"]")
@@ -47,31 +46,31 @@ public class ConfigurationWebElements {
 	@FindBy(xpath = "//*[@id=\"status\"]")
 	WebElement Confstatus;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div/div[5]/button[1]")
+	@FindBy(xpath = "//button[@class='btn add']")
 	WebElement SaveAdd;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td[3]/span")
+	@FindBy(xpath = "//span[@class='status enabled']")
 	WebElement Confadded;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div/div[3]/div")
+	@FindBy(xpath = "//div[text()='End Time must be greater than Start Time.']")
 	WebElement morestartime;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div/div[2]/div")
+	@FindBy(xpath = "//div[text()='Invalid time format (HH:MM:SS).']")
 	WebElement startexp;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div/div[3]/div")
+	@FindBy(xpath = "//div[text()='Invalid time format (HH:MM:SS).']")
 	WebElement endexp;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div/div[4]/div")
+	@FindBy(xpath = "//div[text()='Please select a Status.']")
 	WebElement statusexp;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div/div[2]/div")
+	@FindBy(xpath = "//div[text()='Start Time is required.']")
 	WebElement starttimeblank;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div[2]/div/div[3]/div")
+	@FindBy(xpath = "//div[text()='End Time is required.']")
 	WebElement endtimeblank;
 	
-	@FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr[2]/td[3]/span")
+	@FindBy(xpath = "//span[@class='status disabled']")
 	WebElement disableadded;
 	
 	public ConfigurationWebElements(WebDriver driver) {
@@ -81,11 +80,18 @@ public class ConfigurationWebElements {
 	public void Dlistopt() {
 		Dlistopt.click();
 	}
-	public String Dlist() {
-		return Dlist.getText();
+	public void Devicelistpage() {
+		System.out.println("User at " + Dlist.getText() + " Page");
 	}
-	public String DvcActive() {
-		return DvcActive.getText();
+	public String Dlist() {
+		System.out.println("List of Devices: ");
+		List<WebElement> devices = Devices.findElements(By.tagName("tr"));
+		for(int r=1; r<=devices.size(); r++) {
+			String devicename = Devices.findElement(By.xpath("./tr["+ r +"]/td[1]")).getText();
+			System.out.println(devicename);
+		}
+		String NofDevices = "Number of Devices: " + Integer.toString(devices.size());
+		return NofDevices;
 	}
 	public boolean ConfigurationSetting() {
 		return ConfgOpt.isEnabled();
@@ -95,6 +101,9 @@ public class ConfigurationWebElements {
 	}
 	public void ConfgOpt() {
 		ConfgOpt.click();
+	}
+	public String ConfgDvcname() {
+		return ConfgDvcname.getText();
 	}
 	public void Addopt() {
 		Addopt.click();
@@ -109,10 +118,10 @@ public class ConfigurationWebElements {
 	public void Confendtime(String endtime) {
 		Confendtime.sendKeys(endtime);
 	}
-	public boolean OrderedDevice() throws InterruptedException {
-		List<WebElement> rows = driver.findElements(By.xpath("//*[@id=\"root\"]/div/div[3]/table/tbody/tr"));
+	public boolean activedevice() throws InterruptedException{
+		List<WebElement> rows = Devices.findElements(By.tagName("tr"));
 		for(int r=1; r<=rows.size(); r++) {
-			String ActiveDevice = driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[3]/table/tbody/tr["+ r +"]/td[3]")).getText();
+			String ActiveDevice = Devices.findElement(By.xpath("./tr["+ r +"]/td[3]")).getText();
 			Thread.sleep(1000);
 			if(ActiveDevice.equalsIgnoreCase("Active")) {
 				return true;
@@ -120,19 +129,38 @@ public class ConfigurationWebElements {
 		}
 		return false;
 	}
-	public void Confstatus() throws InterruptedException  {
+	public boolean OrderedDevice(String DeviceName) throws InterruptedException {
+		List<WebElement> rows = Devices.findElements(By.tagName("tr"));
+		for(WebElement row : rows) {
+			String nameofdevice = row.findElement(By.xpath("./td[1]")).getText();
+			if(DeviceName.equalsIgnoreCase(nameofdevice)){
+	           String activeStatusCell = row.findElement(By.xpath("./td[3]")).getText();
+			   System.out.println("Found Device: " + nameofdevice + ", Status: " + activeStatusCell);
+			   if(activeStatusCell.equalsIgnoreCase("Active")) {
+				   System.out.println("Device " + nameofdevice + " is Active");
+				   return true;
+			   } else {
+				   System.out.println("Device " + nameofdevice + " is not Active");
+				   return false;
+			   }
+			}
+		}
+		System.out.println("Device " + DeviceName + " is not found");
+		return false;
+	}
+	public boolean Confstatus(String Status) throws InterruptedException  {
 		Confstatus.click();
 		Select selectobject = new Select(Confstatus);
 		List<WebElement> Statustype = selectobject.getOptions();
 		Thread.sleep(1000);
-		
 		for(WebElement options : Statustype) {
 			String status = options.getText();
-			
-			if(status.equalsIgnoreCase("Enabled")) {
+			if(status.equalsIgnoreCase(Status)) {
 				options.click();
+				return true;
 			}
 		}
+		return false;
 	}
 	public void Disableconfstatus() throws InterruptedException  {
 		Confstatus.click();
@@ -178,9 +206,8 @@ public class ConfigurationWebElements {
 		return disableadded.getText();
 	}
 
-	public void TakeScreenshot() throws IOException {
-		String ScreenshotName = currentdate.toString().replace(":", "_").replace(" ", "_") + ".png";
-		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshot, new File("target/HtmlReports/Screenshots/DeviceList&Configuration/" + ScreenshotName));
+	public void TakeScreenshot(WebDriver driver, Scenario scenario, String stepName) throws IOException {
+		byte[] screenshot =((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+         scenario.attach(screenshot, "image/png", stepName);
 	}
 }

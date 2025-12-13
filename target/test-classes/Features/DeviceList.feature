@@ -17,91 +17,107 @@ Then user able to see Active Devices
 @Configurationoption
 Scenario Outline: Testing Device configuration option
 
-And user able to see configuration option only for Active Devices
+And user able to see configuration option only for Active "<DeviceName>"
 Then clicked configuration option
 And user redirected to Device configuration page
+
+Examples:
+|DeviceName|
+|ASNI DEMO CAM 03|
 
 @Deviceconfiguration
 Scenario Outline: Testing Device configuration for object Detection
 
-And user click settings option for Active Device
+And user able to see configuration option only for Active "<DeviceName>"
+Then clicked configuration option
+And user redirected to Device configuration page
 Then user click Add option
 And user entered "<starttime>" and "<endtime>"
-Then select configuration status Enable
+Then select configuration "<Status>"
 And user clicked Add option
 Then verify configured time saved in Device Configuration
 And user navigated to main dashboard
 
 Examples:
-|starttime|endtime|
-|20:15:10|20:16:10|
+|DeviceName|starttime|endtime|Status|
+|ASNI DEMO CAM 03|20:15:10|20:16:10|Enabled|
 
 @Invalidtimeconfiguration
 Scenario Outline: Testing invalid time Device configuration
 
-And user click settings option of Active Device
-Then click Add option
+And user able to see configuration option only for Active "<DeviceName>"
+Then clicked configuration option
+And user redirected to Device configuration page
+Then user click Add option
 And entered "<starttime>" more then "<endtime>"
-Then selected Enable status of configuration
-And clicked Add option
+Then select configuration "<Status>"
+And user clicked Add option
 Then It should throw exception Start time cannot be more than End time
 
 Examples:
-|starttime|endtime|
-|20:17:10|20:16:10|
+|DeviceName|starttime|endtime|Status|
+|ASNI DEMO CAM 03|20:15:10|20:14:10|Enabled|
 
 @Invalidtimeformat
 Scenario Outline: Testing invalid time Device configuration
 
-And user selected configuration option
-Then user select Add option
+And user able to see configuration option only for Active "<DeviceName>"
+Then clicked configuration option
+And user redirected to Device configuration page
+Then user click Add option
 And user entered alphabet at "<starttime>" and "<endtime>"
-Then selected Enable status at configuration
-And user selected Add option
+Then select configuration "<Status>"
+And user clicked Add option
 Then It should throw exception Enter proper time format
 
 Examples:
-|starttime|endtime|
-|starttime|endtime|
+|DeviceName|starttime|endtime|Status|
+|ASNI DEMO CAM 03|starttime|endtime|Enabled|
 
 @Mandatorydeviceconfiguration
 Scenario Outline: Testing mandatory status Device configuration
 
-And selected configuration option
-Then select Add option
+And user able to see configuration option only for Active "<DeviceName>"
+Then clicked configuration option
+And user redirected to Device configuration page
+Then user click Add option
 And entered "<starttime>" and "<endtime>"
 Then selected Add option
 And It should throw exception Status is mandatory
 
 Examples:
-|starttime|endtime|
-|20:15:10|20:16:10|
+|DeviceName|starttime|endtime|
+|ASNI DEMO CAM 03|20:15:10|20:16:10|
 
 @Blanktimeconfiguration
 Scenario Outline: Testing mandatoy time configuration
 
-And user clicked configuration setting option
-Then user clicked Add button
+And user able to see configuration option only for Active "<DeviceName>"
+Then clicked configuration option
+And user redirected to Device configuration page
+Then user click Add option
 And user not entered "<starttime>" and "<endtime>"
-And select Device status Enable
-Then user click Save button
+Then select configuration "<Status>"
+And user clicked Add option
 And It should throw mandatory exception start time and end time are required
 
 Examples:
-|starttime|endtime|
-|||
+|DeviceName|starttime|endtime|Status|
+|ASNI DEMO CAM 03|||Enabled|
 
 @Disableconfiguration
 Scenario Outline: Testing Device configuration for object Detection
 
-And Configuration settings button clicked
-Then user click Add button
-And user provide "<starttime>" and "<endtime>"
-Then select configuration status Disable
-And user clicked Save button
+And user able to see configuration option only for Active "<DeviceName>"
+Then clicked configuration option
+And user redirected to Device configuration page
+Then user click Add option
+And user not entered "<starttime>" and "<endtime>"
+Then select configuration "<Status>"
+And user clicked Add option
 Then configured time saved in Device Configuration page
-And user redirected back to main dashboard
+And user navigated to main dashboard
 
 Examples:
-|starttime|endtime|
-|21:10:10|21:11:10|
+|DeviceName|starttime|endtime|Status|
+|ASNI DEMO CAM 03|20:15:10|20:16:10|Disabled|

@@ -13,6 +13,7 @@ import WebElements.AlertWebElements;
 import WebElements.LoginWebElements;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -23,6 +24,12 @@ public class AlertDashboard {
 	WebDriver driver;
 	LoginWebElements login;
 	AlertWebElements alert;
+	private Scenario scenario;
+
+	@Before
+    public void beforeScenario(Scenario scenario) {
+        this.scenario = scenario;
+    }
 
 	@Before
 	public void openbrowser() throws InterruptedException {
@@ -68,7 +75,7 @@ public class AlertDashboard {
 		alert = new AlertWebElements(driver);
 		alert.allalerts();
 		Thread.sleep(1000);
-		alert.Takescreenshot();
+		alert.Takescreenshot(driver, scenario, "All Alerts tabs");
 	}
 
 	// @TC_01
@@ -95,7 +102,7 @@ public class AlertDashboard {
 	public void enteralertid(String alertid) throws InterruptedException, IOException {
 		alert.searchalertid(alertid);
 		Thread.sleep(1000);
-		alert.Takescreenshot();
+		alert.Takescreenshot(driver, scenario, "Search Alert ID");
 	}
 
 	@Then("the system should display the corresponding alert details {string}")
@@ -123,7 +130,7 @@ public class AlertDashboard {
 		// Code to select date range
 		alert.selectdaterange(FromDate, ToDate);
 		Thread.sleep(1000);
-		alert.Takescreenshot();
+		alert.Takescreenshot(driver, scenario, "Date Range");
 	}
 
 	@Then("the system should display the alerts within the selected date range")
@@ -139,7 +146,7 @@ public class AlertDashboard {
 		// Code to select date range
 		alert.selectdaterange(FromDate, ToDate);
 		Thread.sleep(1000);
-		alert.Takescreenshot();
+		alert.Takescreenshot(driver, scenario, "Date Range");
 	}
 
 	@Then("the system should display no alerts for the selected date range")
@@ -155,7 +162,7 @@ public class AlertDashboard {
 		// Code to select severity
 		alert.selectseverity(severitylevel);
 		Thread.sleep(1000);
-		alert.Takescreenshot();
+		alert.Takescreenshot(driver, scenario, "Severity");
 	}
 
 	@Then("the system should display the alerts for the selected severity level {string}")
@@ -176,7 +183,7 @@ public class AlertDashboard {
 		}
 		alert.viewdevices();
 		Thread.sleep(1000);
-		alert.Takescreenshot();
+		alert.Takescreenshot(driver, scenario, "View Devices");
 	}
 
 	@Then("the system should display the devices that are invovled in raised alert")
@@ -201,7 +208,7 @@ public class AlertDashboard {
 		}
 		alert.clickalertid();
 		Thread.sleep(1000);
-		alert.Takescreenshot();
+		alert.Takescreenshot(driver, scenario, "Alert Specific Details");
 	}
 
 	@Then("user navigate to the specific alert {string} details page")
@@ -216,7 +223,7 @@ public class AlertDashboard {
 		for (String handle : driver.getWindowHandles()) {
 			driver.switchTo().window(handle);
 			Thread.sleep(1000);
-			alert.Takescreenshot();
+			alert.Takescreenshot(driver, scenario, "Alert Specific Details");
 			String actualurl = driver.getCurrentUrl();
 			if (actualurl.contains(expectedurl)) {
 				System.out.println("User navigated to alert specific details page " + alert.navigatetoalertspecificdetails());
@@ -228,7 +235,7 @@ public class AlertDashboard {
 		// Code to verify displayed alert information
 		System.out.println("Alert Information: " + alert.specificalertiddetails());
 		Thread.sleep(1000);
-		alert.Takescreenshot();
+		alert.Takescreenshot(driver, scenario, "Alert Specific Details");
 	}
 
 	@And("View Details & Actions button should be clickable and it should display Device Name, Inference Analysis and Status")
@@ -238,6 +245,6 @@ public class AlertDashboard {
 		Thread.sleep(500);
 		alert.clickviewdetailsactions();
 		Thread.sleep(1000);
-		alert.Takescreenshot();
+		alert.Takescreenshot(driver, scenario, "Alert Specific Details");
 	}
 }

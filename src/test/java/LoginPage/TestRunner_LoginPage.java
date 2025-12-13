@@ -9,7 +9,10 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 features="src/test/resources/Features", 
 glue={"LoginPage"},
-plugin = {"pretty", "html:target/HtmlReports/LoginReport.html"},
+plugin = {
+    				"pretty",
+    				"json:target/JsonReports/LoginPage.json",
+    				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/extent"},
 tags =("@Validcredentials or @InvalidUsername or @InvalidPassword or @EmptyCredentials or @UsernamelessRange or @PasswordlessRange or @UsernamemoreRange or @PasswordmoreRange or @Casesensitivitycheck"))
 public class TestRunner_LoginPage {
 

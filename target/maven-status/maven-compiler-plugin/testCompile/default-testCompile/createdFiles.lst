@@ -1,0 +1,11 @@
+LoginPage\LoginSteps.class
+WebElements\LoginWebElements.class
+AlertDashboard\TestRunner_AlertDashboard.class
+DeviceList\TestRunner_DeviceList.class
+LoginPage\TestRunner_LoginPage.class
+AlertDashboard\AlertDashboard.class
+DeviceList\DeviceList.class
+DeviceOrder\DeviceOrder.class
+WebElements\ConfigurationWebElements.class
+WebElements\AlertWebElements.class
+DeviceOrder\TestRunner_DeviceOrder.class
